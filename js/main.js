@@ -1,19 +1,26 @@
-var km
+"use strict"
+
+//Tutte le variabili
+var km;
+var età;
+var prezzo;
+
+
+//Tutte le costanti
+const PrezzoAlKm=0.21;
+const ScontoMinorenni=0.8;
+const ScontoAnziani=0.4;
+
+
+//Prompt - Richieste all'utente
 km=prompt("Quanti km vuoi percorrere?");
 console.log(km);
 
-var età
 età=prompt("Quanti anni hai?");
 console.log(età);
 
-const PrezzoAlKm=0.21
-const ScontoMinorenni=0.8
-const ScontoAnziani=0.4
 
-var prezzo
-
-
-
+//Calcolo prezzo per età
 if (età < 18) {
     prezzo = (km * PrezzoAlKm * ScontoMinorenni );
   } else if (età > 65) {
@@ -22,8 +29,10 @@ if (età < 18) {
     prezzo = (km * PrezzoAlKm );
   } 
   
-  var PrezzoApprossimato=Math.round((prezzo + Number.EPSILON) * 100) / 100;
+//Calcolo prezzo finale-approssimato
+var PrezzoFinale=Math.round((prezzo + Number.EPSILON) * 100) / 100;
   
-  document.getElementById('prezzo').innerHTML=("Devi sganciare " + (PrezzoApprossimato) + " €" ); 
+//Inietto risultato nell'HTML
+document.getElementById('prezzo').innerHTML=("Devi sganciare " + (PrezzoFinale) + " €" ); 
  
  
