@@ -10,7 +10,7 @@ const PrezzoAlKm=0.21
 const ScontoMinorenni=0.8
 const ScontoAnziani=0.4
 
-var prezzo=Math.round((prezzo + Number.EPSILON) * 100) / 100;
+var prezzo
 
 
 
